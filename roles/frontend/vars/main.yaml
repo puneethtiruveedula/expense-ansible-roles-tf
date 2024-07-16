@@ -1,2 +1,3 @@
-component: frontend
+BACKEND_API_URL: backend.puneeth.cloud
 app_location: /usr/share/nginx/html
+component: frontend
