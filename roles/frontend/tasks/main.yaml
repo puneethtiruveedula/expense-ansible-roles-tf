@@ -1,20 +1,21 @@
 - name: install nginx server
   ansible.builtin.dnf:
-    name: nginx
-    state: latest
+      name: nginx
+      state: latest
 
 - name: start and enable nginx
   ansible.builtin.service:
     name: nginx
     state: started
     enabled: yes
-
-- name: run app pre-requisites
+      
+- name: run app pre-requisties
   ansible.builtin.import_role:
     name: common
-    tasks_from: app-pre-req
+    tasks_from: app-pre-req.yaml
 
-# if there is change in configuration only, then you need to restart nginx
+
+# if there is change in configuration, then you need to restart nginx
 - name: copy backend conf
   ansible.builtin.template:
     src: expense.conf.j2
@@ -23,6 +24,6 @@
   - restart nginx
 
 # - name: restart nginx
-#   ansible.builtin.service:
-#     name: nginx
-#     state: restarted
+ # ansible.builtin.service:
+  #  name: nginx
+  #  state: restarted

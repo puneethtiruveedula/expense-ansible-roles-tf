@@ -3,4 +3,3 @@ login_host: db-dev.puneeth.cloud
 login_password: ExpenseApp1
 DB_HOST: db-dev.puneeth.cloud
 BACKEND_API_URL: backend.app-dev.puneeth.cloud
-nexus_url: nexus.puneeth.cloud:8081
